@@ -1,3 +1,5 @@
+//=============================2. УРОК ПО СОЗДАНИЮ ТЕСТОВ ДЛЯ КОМПЬЮТЕРА ==========================
+
 describe('Computer', function() { // describe - описываем на объект
 	beforeEach(function() { // beforeEach - выполняется перед каждым тестом
 		Computer.currentMemory = 2; // устанавливаем значение по умолчанию, сбрасываем
@@ -49,4 +51,31 @@ describe('Computer', function() { // describe - описываем на объе
 		expect(Computer.currentSpace).toEqual(1000); // и проверим что наша память должна стать обратно 1000 ГБ
 	});
 	
+});
+
+//=============================3.  ФУНКЦИИ ПРОВЕРКИ ОЖИДАНИЙ ==========================
+
+describe("My tests", function() {
+	it("Function which alwase get true", function() {
+		expect(alwaseGetTrue()).toEqual(true); // матчер - функция проверки на еквивалентность
+	});
+	it("Function which alwase get true", function() {
+		expect(alwaseGetTrue()).toBeTruthy(true); // матчер - функция проверки значения TRUE
+	});
+	it("Function which alwase get false", function() {
+		expect(alwaseGetFalse()).not.toBeTruthy(true); // матчер - функция проверки на НЕ TRUE
+	});
+	it("Function which alwase get false", function() {
+		expect(alwaseGetFalse()).toBeFalsy(false);// матчер - функция проверки на FALSE
+	});
+
+	it("Function which returns arrat of professionals", function() {
+		expect(getArrayOfProfessional()).toContain('Designer');// матчер - функция проверки содержит ли массив профессию
+		expect(getArrayOfProfessional()).not.toContain('Manager');// матчер - функция проверки не содержит ли массив указанную профессию
+		expect(getArrayOfProfessional()).toNotContain('Manager');// матчер - функция проверки на содержит ли массив указанную профессию
+	});
+
+	it("Function should check years not less then 16 ", function() {
+		expect(User.getAge()).toBeGreaterThan(18);
+	});
 });

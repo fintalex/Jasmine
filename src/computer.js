@@ -1,3 +1,4 @@
+//=============================2. УРОК ПО СОЗДАНИЮ ТЕСТОВ ДЛЯ КОМПЬЮТЕРА ==========================
 // создаем глобальную переменную КОмпутер
 
 window.Computer = {
@@ -36,5 +37,25 @@ window.Computer = {
 	},
 	formatDrive: function(){ // мутод очистки памяти компа - форматирование диска
 		this.currentSpace = 1000;
+	}
+}
+
+//=============================3.  ФУНКЦИИ ПРОВЕРКИ ОЖИДАНИЙ ==========================
+
+function alwaseGetTrue() {
+	return true;
+}
+function alwaseGetFalse() {
+	return false;
+}
+function getArrayOfProfessional() {
+	var arr = ['Programmer', 'builder', 'architector', 'Designer', 'teacher'];
+	return arr;
+}
+
+var User = {
+	age: 19, 
+	getAge: function() {
+		return this.age;
 	}
 }
